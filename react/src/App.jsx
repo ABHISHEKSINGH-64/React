@@ -7,7 +7,7 @@
 //   );
 // }
 
-export default App
+
 
 
 function App(){
@@ -24,7 +24,7 @@ function Child(props){
   return(
        <>
        <GrandChild name={nameVar} age={ageVar} />
-       </>
+       </>  
   )
 }
 
@@ -37,3 +37,15 @@ function GrandChild(props){
     </>
   );
 }
+
+function App() {
+  const isLogin = true;
+  return(
+    <>
+    {isLogin ? <h1>Welcome</h1> : <h2>Please Login</h2>}
+  
+    </>
+  );
+}
+export default App;
+
