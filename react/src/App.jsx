@@ -1,51 +1,28 @@
-// function App(){
-//   return(
-//     <>
-//     <h1>Hello World</h1>
-//     <p>I am Learning React</p>
-//     </>
-//   );
-// }
+import React, { useState } from "react";
 
-
-
-
-function App(){
- 
-  return(
-         <>
-          <Child name="Abhisehk" age={18} />
-         </>
-  );
-}
-function Child(props){
-  const nameVar=props.name
-  const ageVar = props.age
-  return(
-       <>
-       <GrandChild name={nameVar} age={ageVar} />
-       </>  
-  )
-}
-
-function GrandChild(props){
-  return(
-    <>
-    <h1>Hello World</h1>
-    <p>Name : {props.name}</p>
-    <p>Age : {props.age}</p>
-    </>
-  );
-}
-
-function App() {
-  const isLogin = true;
-  return(
-    <>
-    {isLogin ? <h1>Welcome</h1> : <h2>Please Login</h2>}
+function Counter() {
   
-    </>
+  const [count, setCount] = useState(0);
+
+  
+  const increment = () => setCount(prev => prev + 1);
+  const decrement = () => setCount(prev => prev - 1);
+  const reset = () => setCount(0);
+
+  return (
+   <>
+        <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>Count: {count}</h1>
+
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement} style={{ margin: "0 10px" }}>
+        Decrement
+      </button>
+      <button onClick={reset}>Reset</button>
+    </div>
+   </>
   );
 }
-export default App;
+
+export default Counter;
 
